@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View all books</title>
+</head>
+<div>
+    <lable><h1> All Books Info <h1></lable>
+    <hr>
+</div>
+<body>  
+    <table style="border-spacing: 10px;">
+        <thead>
+            <th>  Book Name  </th>
+            <th>  Guthor Name  </th>
+            <th>  Genre  </th>
+            <th>  Language  </th>
+        </thead>
+        <tr>
+        {% for i in allbook %}
+            <td> {{i.bookname}} </td>
+            <td> {{i.author}} </td>
+            <td> {{i.genre}} </td>
+            <td> {{i.language}} </td>
+        </tr>
+        {% endfor %}
+   </table>  
+<hr>
+<div>
+    <form method="get">
+        {{myfilter.form}}<br>                        
+    {% for i in myfilter.qs %}
+        <input type="checkbox" ><label >{{i.genre}}</label>
+        <input type="checkbox" ><label >{{i.language}}</label><br> 
+    {% endfor %}      
+    <input type='submit' style='margin:8px;' value='Filter This Books' > 
+    </form>
+</div>
+<hr>
+<a href='/viewb/' > <button type='button' style='margin:8px;' > Show All Books </button> </a><br>
+<a href='/' > <button type='button' style='margin:8px;' > Home Page </button> </a><br>
+</body>
+</html>
+
+

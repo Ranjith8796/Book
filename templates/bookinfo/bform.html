@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a book</title>
+</head>
+<body>  
+    <form action = "/addabook/" method="post">
+        {% csrf_token %}
+        <label> Book Name: </label> 
+        <input type='text' required=True name='bookname' placeholder="Enter a book name"><br> <br> 
+        <label> Author: </label>  
+        <input type='text' required=True name='author' placeholder="Enter an author name"><br> <br>        
+        <label> Genre: </label>  
+        <input type='text'required=True name='genre' placeholder="Enter the gener"><br><br> 
+        <label> Language: </label>  
+        <input type='text'required=True name='language' placeholder="Enter the language"><br><br>                  
+        <input type="submit" style='margin:8px;' value='Add Book'>              
+        <a href='/' > <button type='button' style='margin:8px;' > Home Page </button> </a>
+           
+    </form>   
+</body>
+</html>
